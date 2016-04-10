@@ -1,0 +1,13 @@
+{% block content %}
+    {% if registered %}
+        <h1> registration done </h1>
+    {% else %}
+        <h1>Create an account</h1>
+
+        <form id="user_form" action="" method="post">
+            {% csrf_token %}
+            {{ user_form.as_p }}
+            <input type="submit" value="Register">
+        </form>
+    {% endif %}
+{% endblock %}
